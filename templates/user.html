@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+    <meta name="Robots" content="index,follow" />
+    <title>
+      Usuario
+    </title>
+    <link rel="stylesheet" type="text/css" href="../templates/style.css" /><style type="text/css">{{css}}</style>
+    <link rel="shortcut icon" href="../templates/mirevista-35.ico" />
+  </head>
+  <body>
+    <div id="head">
+		<div id="title">
+         <img src="/templates/mirevista-35.jpg"> User
+		</div>
+        <div id="menu">
+          <ul>
+            <li>
+              <a href="/" title="Revistas">Revistas</a>
+            </li>
+            <li class="active">
+              <a href="" title="User">{{user|safe}}</a>
+            </li>
+            {% if not autenticado %}
+            {% else %}
+              <li>
+                <a href="canales" title="Canal">Canal</a>
+              </li>
+              <li>
+                <a href="logout" title="logout">Logout</a>
+              </li>
+            {% endif %}
+            <li>
+              <a href="ayuda" title="Ayuda">Ayuda</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+<div id="body_wrapper">
+  <div id="body">
+      <div id="left">
+        <div class="content">
+          <h1> {{titular|safe}} </h1>
+			<hr />
+               {% if not page %}
+                    <h3>Revista vacia</h3>
+               {% else %}
+    		        {{page|safe}}
+               {% endif %}
+               {% if not autenticado %} 
+               {% else %}
+                    <hr />
+                    {{cambios|safe}}
+               {% endif %}
+        </div>
+      </div>
+      <div id="right">
+          <div class="content">
+            <h3>Ir al canal <a href="http://localhost:1234/{{user|safe}}/rss">RSS</a></h3>
+            {% if not autenticado %}
+                
+            {% else %}
+             <form action='' method='post'>
+                <label for='cambiartitulo'>Cambiar Titulo</label>
+                <input type='text' name='cambiartitulo' value='' id='cambiartitulo' size='14'><br>
+                <input type='submit' value='Chahge' />
+             </form>
+             <form action='' method='post'>{% csrf_token %}
+                 Fondo: url imagen o color<br>
+                 <label for="fondoTitulo">Fondo titular</label>
+                 <input type="text" name="fondoTitulo" value="" id="fondoTitulo" size="14"><br>
+                 <label for="colorTitulo">Color titular</label>
+                 <input type="text" name="colorTitulo" value="" id="colorTitulo" size="14"><br>
+                 <label for="fondo">Fondo cuerpo</label>
+                 <input type="text" name="fondo" value="" id="fondo" size="14"><br>
+                 <label for="color">Color texto</label>
+                 <input type="text" name="color" value="" id="color" size="14"><br><br>
+                 tama&ntilde;o vacio = tama&ntilde;o por defecto<br>
+                 <label for="sizeTitulo">Tama&ntilde;o tiulo</label>
+                 <input type="text" name="sizeTitulo" value="" id="sizeTitulo" size="14"><br>
+                 <label for="sizeTexto">Tema&ntilde;o texto</label>
+                 <input type="text" name="sizeTexto" value="" id="sizeTexto" size="14"><br>
+                 <input type="submit" value="Change" />
+             </form>
+             <form action='' method='post'>
+                Copyright<br>
+                <label for="copycolor">Color</label>
+                <input type='text' name='copycolor' value='' id='copycolor' size='14'><br>
+                <label for='copysize'>Tama&ntilde;o</label>
+                <input type='text' name='copysize' value='' id='copysize' size='14'><br>
+                <input type='submit' value='Chahge' />
+            </form>
+            {% endif %}
+            
+          </div>
+
+      </div>
+      <div class="clearer"></div>
+
+    </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="clearer"></div>
+</div>
+<div id="footer"> Designed by Quan Zhou <br />
+&copy; Copyright 2013
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+    <meta name="Robots" content="index,follow" />
+    <title>
+      Channel
+    </title>
+    <link rel="stylesheet" type="text/css" href="../templates/style.css" />
+    <style type="text/css">{{css}}</style>
+    <link rel="shortcut icon" href="../templates/mirevista-35.ico" />
+  </head>
+  <body>
+    <div id="head">
+      <div id="head2">
+		<div id="title">
+		 <img src="/templates/mirevista-35.jpg"> Canal
+	    </div>
+        <div id="menu">
+          <ul>
+            <li>
+              <a href="/" title="Revistas">Revistas</a>
+            </li>
+            <li class="active">
+              <a href="" title="Canal">Canal</a>
+            </li>
+            <li>
+              <a href="/logout" title="logout">Logout</a>
+            </li>
+            <li>
+              <a href="/ayuda" title="Ayuda">Ayuda</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+<div id="body_wrapper">
+  <div id="body">
+      <div id="left">
+        <div class="content">
+          <h1>Canales RSS</h1>
+          {% if not page %}
+            <h2>No hay canales disponibles</h2>
+          {% else %}
+            <h2>{{page|safe}}</h2>
+          {% endif %}
+        </div>
+      </div>
+      <div id="right">
+          <div class="content">
+                <h4>Agrege un canal RSS</h4>
+                <form action='/canales' method = 'post'>
+                    <input type="text" name="rss" value="" id="rss" size="14">
+                    <input type="submit" value="Add" style="float: right;" />
+                </form>
+                <br><br>
+                <h4><a href="http://localhost:1234/canales">canales</a></h4>
+                <br>
+                <h3>Ir a tu paguina: <a href="http://localhost:1234/{{user|safe}}">{{user|safe}}</a></h3>
+          </div>
+      </div>
+      <div class="clearer"></div>
+
+    </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="clearer"></div>
+</div>
+<div id="footer"> 
+Designed by Quan Zhou <br />
+&copy; Copyright 2013
+</div>
+
+</body>
+</html>

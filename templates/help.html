@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+    <meta name="Robots" content="index,follow" />
+    <title>
+      Ayuda
+    </title>
+    <link rel="stylesheet" type="text/css" href="../templates/style.css" />
+<link rel="shortcut icon" href="../templates/mirevista-35.ico" />
+  </head>
+<style type="text/css">{{css}}</style>
+  <body>
+    <div id="head">
+      <div id="head2">
+	    <div id="title">
+		<img src="/templates/mirevista-35.jpg">			 Help
+		</div>
+        
+        <div id="menu">
+          <ul>
+            <li>
+              <a href="/" title="Revistas">Revistas</a>
+            </li>
+            {% if not user %}
+            {% else %}
+              <li>
+                <a href="canales" title="Canal">Canal</a>
+              </li>
+              <li>
+                <a href="logout" title="logout">Logout</a>
+              </li>
+            {% endif %}
+            <li class="active">
+              <a href="" title="Ayuda">Ayuda</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ <div id="body_wrapper">
+  <div id="body">
+      
+        <div class="content">
+          <h1>Ayuda</h1>
+          <h3><p>Si no tienes una cuenta creada en MiRevista sólo podrás ver la lista de revistas de los registrados y sus revistas, podrás puntuar, pero no dejar un comentario(sólo para logeados).</p><p>Para poder registrarte, rellena el formulario de <a href="http://localhost:1234/">Regístrate o cambia el título</a>, una vez registrado hay que logearse, rellenando el formulario de <a href="http://localhost:1234/">Login</a>. Una vez dentro podrás acceder a la parte de canal(sòlo para los usuarios logeados), para elegir las noticias que quieras. También puedes incluir nuevos canales RSS rellenando un formulario con la url de un canal RSS.</p><p>Una vez seleccionado las noticias que quieras podrás entrar en tu revista con la lista de todas tus noticias ordenados según la fecha de selección, y también te damos la posibilidad de personalizar tu pagina web de MiRevista: Cambiar el fondo(puede ser un color uniforme o una url de una imagen), color de letra y tamaño de letra. También puedes ver tu propio canal RSS dando a un enlace que pone "Ir al canal RSS". Y puedes entrar en las revistas de otros usuarios y dejar un comentario y puntuar(1 o -1)</p></h3>
+        </div>
+     
+      
+      <div class="clearer"></div>
+
+    </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="clearer"></div>
+</div>
+<div id="footer"> Designed by Quan Zhou <br />
+&copy; Copyright 2013
+</div>
+
+</body>
+</html>
